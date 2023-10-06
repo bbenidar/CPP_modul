@@ -1,24 +1,34 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/10/03 12:49:25 by bbenidar          #+#    #+#              #
+#    Updated: 2023/10/06 15:32:22 by bbenidar         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = PHONE_BOOK
-CC = clang++
-SRC = ./main.cpp  ./ContactClass.cpp ./PhoneBookClass.cpp
+CC = g++
+SRC = main.cpp ContactClass.cpp PhoneBookClass.cpp
 OBJ = $(SRC:.cpp=.o)
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g -Wall -Wextra -Werror -std=c++98
+HEADERS = PhoneBook.hpp Contact.hpp
 
+all: $(NAME)
 
-all: phoneBook
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) -o $@ $(OBJ)
 
-phoneBook: $(OBJ)
-	@$(CC) $(OBJ) -o phone_book && echo  "\033[1;92mCompilation successful\033[0m"
-
-%.o: %.cpp
-	@echo  "\033[1;93mCompiling $<...\033[0m"
-	@$(CC) $(CFLAGS) -c $< -o $@
+%.o: %.cpp PhoneBook.hpp Contact.hpp
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	@rm -f $(OBJ)
 
 fclean: clean
-	@rm -f phone_book
+	@rm -f $(NAME)
 
 re: fclean all
-

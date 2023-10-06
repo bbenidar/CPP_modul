@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhonBook.hpp                                       :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 12:49:29 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/10/06 15:32:32 by bbenidar         ###   ########.fr       */
+/*   Created: 2023/10/03 14:10:23 by bbenidar          #+#    #+#             */
+/*   Updated: 2023/10/06 15:31:55 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
-
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
+#include"PhonBook.hpp"
 #include<iostream>
 #include<cstring>
-
-
 #include<iomanip>
-#include "Contact.hpp"
 
-class PhoneBook
+class Contact
 {
-    private :
-    Contact contact[8];
-    public :
-    void phoneBook(int *i); 
-    void search();          
-};
+    private:
+    std::string  FirstName;
+    std::string  LastName;
+    std::string  NickName;
+    std::string  PhoneNum;
+    std::string  DarkSecret;
+    public:
+        Contact(){}
 
+        Contact(int i);
+        void serach(int i);
+};
 
 #endif

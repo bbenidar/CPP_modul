@@ -5,23 +5,22 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/10/03 12:48:54 by bbenidar          #+#    #+#              #
-#    Updated: 2023/10/04 16:34:43 by bbenidar         ###   ########.fr        #
+#    Created: 2023/10/03 12:49:25 by bbenidar          #+#    #+#              #
+#    Updated: 2023/10/06 15:59:41 by bbenidar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
-NAME = MEGAPHONE
+NAME = ACOUNT
 CC = c++
-SRC = ./megaphone.cpp
+SRC = ./tests.cpp ./Account.cpp
 OBJ = $(SRC:.cpp=.o)
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS =  
 
 
-all: megaphone
+all: phoneBook
 
-megaphone: $(OBJ)
-	@$(CC) $(CFLAGS) $(OBJ)  -o megaphone && echo  "\033[1;92mCompilation successful\033[0m"
+phoneBook: $(OBJ)
+	@$(CC) $(OBJ) -o Account && echo  "\033[1;92mCompilation successful\033[0m"
 
 %.o: %.cpp
 	@echo  "\033[1;93mCompiling $<...\033[0m"
@@ -31,7 +30,7 @@ clean:
 	@rm -f $(OBJ)
 
 fclean: clean
-	@rm -f megaphone
+	@rm -f Account
 
 re: fclean all
 
