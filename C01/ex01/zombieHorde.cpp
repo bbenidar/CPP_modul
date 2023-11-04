@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/11 17:48:41 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/10/23 17:56:27 by bbenidar         ###   ########.fr       */
+/*   Created: 2023/10/17 14:44:03 by bbenidar          #+#    #+#             */
+/*   Updated: 2023/10/26 09:43:52 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-#define HUMANB_HPP
+#include"Zombie.hpp"
 
-#include "Weapon.hpp"
-
-class HumanB
+Zombie* zombieHorde( int N, std::string name )
 {
-    private:
-        Weapon *weaponB;
-        std::string name;
-    public:
-        HumanB(void);
-        HumanB(std::string nameOfClub);
-        void setWeapon(Weapon &weaponn);
-        void attack();
-};
-
-
-
-
-#endif
+    if(N <= 0)
+        return NULL;
+    Zombie *zombies = new Zombie[N];
+    for (int i = 0; i < N; i++)
+        zombies[i].setName(name);
+    return zombies;
+}

@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 17:48:33 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/10/17 12:20:38 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/10/26 10:17:40 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 
 HumanA::HumanA(std::string nameOfClub, Weapon& weapon_) :
+weaponA(weapon_),
+name(nameOfClub)
+{}
 
-weapon(weapon_)
+void HumanA::attack()
 {
-    name = nameOfClub;
-}
-
-void HumanA::attack() {
-    std::cout << name << " attacks with their " << weapon.getType() << std::endl;
+    std::cout << name << " attacks with their " << weaponA.getType() << std::endl;
 }

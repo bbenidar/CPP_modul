@@ -6,7 +6,7 @@
 #    By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/11 17:46:31 by bbenidar          #+#    #+#              #
-#    Updated: 2023/10/17 12:19:39 by bbenidar         ###   ########.fr        #
+#    Updated: 2023/10/24 18:24:10 by bbenidar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ all: BRAIN
 BRAIN : $(OBJ)
 	@$(CC) $(OBJ) -o BRAIN && echo  "\033[1;92mCompilation successful\033[0m"
 
-%.o: %.cpp
+%.o: %.cpp Weapon.hpp HumanA.hpp HumanB.hpp
 	@echo  "\033[1;93mCompiling $<...\033[0m"
 	@$(CC) $(CFLAGS) -c $< -o $@
 

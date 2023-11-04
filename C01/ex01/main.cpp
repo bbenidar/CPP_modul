@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/11 17:48:41 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/10/23 17:56:27 by bbenidar         ###   ########.fr       */
+/*   Created: 2023/10/17 13:13:39 by bbenidar          #+#    #+#             */
+/*   Updated: 2023/10/31 14:45:51 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-#define HUMANB_HPP
+#include"Zombie.hpp"
 
-#include "Weapon.hpp"
-
-class HumanB
+int main ()
 {
-    private:
-        Weapon *weaponB;
-        std::string name;
-    public:
-        HumanB(void);
-        HumanB(std::string nameOfClub);
-        void setWeapon(Weapon &weaponn);
-        void attack();
-};
-
-
-
-
-#endif
+	Zombie *zombie;
+	
+	zombie = zombieHorde(10, "brahim");
+	if(zombie == NULL)
+		return 1;
+	for(int i = 0; i < 10; i++)
+		zombie->announce();
+	
+	delete[] zombie;
+	return 0;
+}

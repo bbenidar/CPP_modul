@@ -6,30 +6,29 @@
 #    By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/17 13:13:34 by bbenidar          #+#    #+#              #
-#    Updated: 2023/10/24 18:16:51 by bbenidar         ###   ########.fr        #
+#    Updated: 2023/10/24 18:19:55 by bbenidar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Zombie
+NAME = ZombieHord
 CC = c++
-SRC = ./main.cpp newZombie.cpp randomChump.cpp Zombie.cpp 
+SRC = ./main.cpp zombieHorde.cpp Zombie.cpp 
+
 OBJ = $(SRC:.cpp=.o)
-CFLAGS =  -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
+all: $(NAME)
 
-all: Zombie 
-
-Zombie : $(OBJ)
-	@$(CC) $(OBJ) -o Zombie && echo  "\033[1;92mCompilation successful\033[0m"
+$(NAME): $(OBJ) 
+	$(CC) $(CFLAGS) -o $@ $(OBJ)
 
 %.o: %.cpp Zombie.hpp
-	@echo  "\033[1;93mCompiling $<...\033[0m"
-	@$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	@rm -f $(OBJ)
 
 fclean: clean
-	@rm -f Zombie
+	@rm -f $(NAME)
 
 re: fclean all

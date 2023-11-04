@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/11 17:48:41 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/10/23 17:56:27 by bbenidar         ###   ########.fr       */
+/*   Created: 2023/10/17 14:52:49 by bbenidar          #+#    #+#             */
+/*   Updated: 2023/11/01 19:00:33 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-#define HUMANB_HPP
+#include<iostream>
 
-#include "Weapon.hpp"
-
-class HumanB
+int main()
 {
-    private:
-        Weapon *weaponB;
-        std::string name;
-    public:
-        HumanB(void);
-        HumanB(std::string nameOfClub);
-        void setWeapon(Weapon &weaponn);
-        void attack();
-};
+    std::string var = "HI THIS IS BRAIN";
+    std::string* stringPTR = &var;
+    std::string& stringREF = var;
+    
 
+    std::cout << &var << std::endl;
+    std::cout << stringPTR << std::endl;
+    std::cout << &stringREF << std::endl;
 
-
-
-#endif
+    std::cout << var << std::endl;
+    std::cout << *stringPTR << std::endl;
+    std::cout << stringREF << std::endl;
+    
+}

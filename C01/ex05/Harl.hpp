@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/11 17:48:41 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/10/23 17:56:27 by bbenidar         ###   ########.fr       */
+/*   Created: 2023/10/18 15:00:22 by bbenidar          #+#    #+#             */
+/*   Updated: 2023/10/24 18:29:53 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-#define HUMANB_HPP
+#ifndef HARL_HPP
+# define HARL_HPP
 
-#include "Weapon.hpp"
+# include <iostream>
 
-class HumanB
+class Harl
 {
-    private:
-        Weapon *weaponB;
-        std::string name;
+  private:
+    void debug(void);
+    void info(void);
+    void warning(void);
+    void error(void); 
     public:
-        HumanB(void);
-        HumanB(std::string nameOfClub);
-        void setWeapon(Weapon &weaponn);
-        void attack();
+    void complain(std::string level);
 };
-
-
 
 
 #endif

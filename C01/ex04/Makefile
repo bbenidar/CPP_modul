@@ -5,24 +5,24 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/10/17 13:13:34 by bbenidar          #+#    #+#              #
-#    Updated: 2023/10/24 18:16:51 by bbenidar         ###   ########.fr        #
+#    Created: 2023/10/17 17:35:38 by bbenidar          #+#    #+#              #
+#    Updated: 2023/10/24 18:24:59 by bbenidar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Zombie
+NAME = SIDEisforLosers
 CC = c++
-SRC = ./main.cpp newZombie.cpp randomChump.cpp Zombie.cpp 
+SRC = ./main.cpp
 OBJ = $(SRC:.cpp=.o)
-CFLAGS =  -Wall -Wextra -Werror -std=c++98
+CFLAGS =  -g -Wall -Wextra -Werror -std=c++98
 
 
-all: Zombie 
+all: SIDEisforLosers 
 
-Zombie : $(OBJ)
-	@$(CC) $(OBJ) -o Zombie && echo  "\033[1;92mCompilation successful\033[0m"
+SIDEisforLosers : $(OBJ)
+	@$(CC) $(OBJ) -o SIDEisforLosers && echo  "\033[1;92mCompilation successful\033[0m"
 
-%.o: %.cpp Zombie.hpp
+%.o: %.cpp
 	@echo  "\033[1;93mCompiling $<...\033[0m"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
@@ -30,6 +30,6 @@ clean:
 	@rm -f $(OBJ)
 
 fclean: clean
-	@rm -f Zombie
+	@rm -f SIDEisforLosers
 
 re: fclean all

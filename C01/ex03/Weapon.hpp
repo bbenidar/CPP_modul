@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 17:48:50 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/10/17 12:14:26 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/11/01 19:09:37 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,18 @@
 
 #include <iostream>
 
-// Forward declaration of HumanA class
 class HumanA;
+class HumanB; //n avoidi circular dependencies
 
 class Weapon
 {
 private:
-    std::string _type;
+    std::string c_type;
 
 public:
     Weapon(std::string weaponType);
     Weapon(void);
-    std::string getType();
+    const std::string& getType();
     void setType(std::string type_);
 };
 

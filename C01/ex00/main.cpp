@@ -6,11 +6,12 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 13:13:39 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/10/17 14:39:27 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/10/21 13:07:30 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Zombie.hpp"
+
 
 int main ()
 {
@@ -21,5 +22,6 @@ int main ()
 	
 	randomChump("faaz");
 	delete zombie;
+
 	return 0;
 }
