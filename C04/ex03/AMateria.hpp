@@ -1,0 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/19 16:30:45 by bbenidar          #+#    #+#             */
+/*   Updated: 2023/11/21 18:56:15 by bbenidar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#pragma once
+
+#include <iostream>
+class ICharacter;
+
+class AMateria
+{
+    protected:
+        std::string _type;
+
+    public:
+        AMateria();
+        AMateria(AMateria const &src);
+        virtual ~AMateria();
+        AMateria &operator=(AMateria const &src);
+        AMateria(std::string const & type);
+
+        std::string const & getType() const; //Returns the materia type
+        virtual AMateria* clone() const = 0;
+        virtual void use(ICharacter& target);
+};
