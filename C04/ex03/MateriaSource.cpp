@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:37:26 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/11/21 18:39:09 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/11/25 18:37:50 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,10 @@ MateriaSource& MateriaSource::operator=(MateriaSource const &rhs)
 
 void MateriaSource::learnMateria(AMateria *m)
 {
-    for (int i = 0; i < 4; i++)
+    int i = 0;
+    if (m == NULL)
+        return ;
+    for (i = 0; i < 4; i++)
     {
         if (this->_inventory[i] == NULL)
         {
@@ -47,6 +50,8 @@ void MateriaSource::learnMateria(AMateria *m)
             break ;
         }
     }
+    if (i == 4)
+        delete m;
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type)
@@ -58,4 +63,3 @@ AMateria* MateriaSource::createMateria(std::string const & type)
     }
     return NULL;
 }
-

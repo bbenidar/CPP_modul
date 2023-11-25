@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 10:27:29 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/11/21 18:48:38 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/11/25 18:07:35 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ class Character : public ICharacter
     private:
         std::string _name;
         AMateria *_inventory[4];
-        int _nbMateria;
+        AMateria *_unequiped[4];
     public:
         Character();
         Character(std::string const & name);
         Character(Character const &src);
-        ~Character();
+        virtual ~Character();
         Character &operator=(Character const &src);
         std::string const & getName() const;
         void equip(AMateria* m);

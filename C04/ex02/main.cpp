@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 19:34:13 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/11/18 15:14:39 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/11/25 18:41:02 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
+
 
 int main()
 {
@@ -39,10 +40,8 @@ int main()
     std::cout << dog2->getIdea(0) << std::endl;
     std::cout << dog2->getIdea(1) << std::endl;
     std::cout << dog2->getIdea(2) << std::endl;
-    dog2 = new Dog(*dog);
     delete cat;
     delete dog; 
     delete cat2;
     delete dog2;
-    while(1);
 }

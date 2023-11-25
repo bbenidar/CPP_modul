@@ -6,13 +6,14 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 16:30:45 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/11/21 18:56:15 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/11/22 19:58:57 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+#include "ICharacter.hpp"
 class ICharacter;
 
 class AMateria

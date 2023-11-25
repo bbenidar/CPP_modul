@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 10:46:28 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/11/18 13:51:32 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/11/24 21:12:29 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ Cat &Cat::operator=(const Cat& rhs)
     if (this != &rhs)
     {
         this->type = rhs.getType();
+        if (this->brain)
+            delete this->brain;
         this->brain = new Brain();
         for(int i = 0; i < 100; i++)
             this->brain->setIdea(i, rhs.brain->getIdea(i));

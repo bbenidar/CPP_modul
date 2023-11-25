@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 15:58:04 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/11/22 12:54:46 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/11/25 18:08:04 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ Character::Character(Character const &src)
 
 Character::~Character()
 {
+    std::cout << "Character destructor called" << std::endl;
     for (int i = 0; i < 4; i++)
     {
         if (this->_inventory[i] != NULL)
@@ -43,9 +44,20 @@ Character::~Character()
 
 Character& Character::operator=(Character const &rhs)
 {
-    this->_name = rhs._name;
-    for (int i = 0; i < 4; i++)
-        this->_inventory[i] = rhs._inventory[i]->clone();
+    if (this != &rhs) {
+        this->_name = rhs._name;
+
+        for (int i = 0; i < 4; i++)
+        {
+            if (this->_inventory[i])
+                delete this->_inventory[i];
+        }
+        for (int i = 0; i < 4; i++)
+        {
+            if (rhs._inventory[i])
+                this->_inventory[i] = rhs._inventory[i]->clone();
+        }
+    }
     return *this;
 }
 
@@ -56,20 +68,25 @@ std::string const & Character::getName() const
 
 void Character::equip(AMateria *m)
 {
-    for (int i = 0; i < 4; i++)
-    {
-        if (this->_inventory[i] == NULL)
-        {
-            this->_inventory[i] = m;
-            break ;
-        }
-    }
+	for (int i = 0; i < 4; i++)
+		if (!this->_inventory[i]) {
+			this->_inventory[i] = m;
+			break ;
+		}
+		else if (i == 3)
+			std::cout << "Inventory is full" << std::endl;
 }
 
 void Character::unequip(int idx)
 {
-    if (idx >= 0 && idx < 4)
-        this->_inventory[idx] = NULL;
+    if (idx >= 0 && idx < 4 && this->_inventory[idx]) {
+		for (int i = 0; i < 4; i++)
+			if (!this->_unequiped[i]) {
+				this->_unequiped[i] = this->_inventory[idx];
+				break ;
+			}
+		this->_inventory[idx] = NULL;
+	}
 }
 
 void Character::use(int idx, ICharacter &target)

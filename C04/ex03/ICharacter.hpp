@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 16:35:18 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/11/21 18:55:38 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/11/22 19:59:08 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "AMateria.hpp"
 #include <iostream>
-
+class AMateria;
 class ICharacter
 {
     public:

@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 16:32:07 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/11/20 16:15:57 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/11/24 18:04:27 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ Cure::Cure()
 
 Cure::Cure(Cure const &src)
 {
-    std::cout<< "Cure copy constructor called" << std::endl; 
+    std::cout<< "Cure copy constructor called" << std::endl;
+    
     if (this != &src)
         *this = src;
 }

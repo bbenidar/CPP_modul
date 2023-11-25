@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 10:45:48 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/11/18 13:24:55 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/11/25 19:13:00 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,5 @@ class Dog: public Animal{
     void makeSound() const;
     void setIdea(int i, std::string idea);
     std::string getIdea(int i) const;
-    
 };
  
