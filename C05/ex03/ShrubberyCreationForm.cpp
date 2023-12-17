@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 21:56:02 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/12/17 11:06:46 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/12/17 15:55:48 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,14 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 
 void ShrubberyCreationForm::execute(Bureaucrat const& executor) const
 {
+    if (this->getWhether() == false)
+        throw AForm::FormNotSignedException();
+    if (executor.getGrade() > this->getConstaGradeToExec())
+        throw AForm::GradeTooLowException();
     std::ofstream filenam;
     std::string filename = this->_target + "_shrubbery";
     filenam.open(filename.c_str());
-    (void)executor;
+    
     if (filenam.is_open()) {
         filenam << "    oxoxoo    ooxoooox" << std::endl;
         filenam << "  ooxoxo oo  oxoxooooox" << std::endl;
@@ -63,10 +67,8 @@ void ShrubberyCreationForm::execute(Bureaucrat const& executor) const
         filenam << "         |  |" <<std::endl;
         filenam << "         |  |" <<std::endl;
         filenam << "      __/____\\__" << std::endl;
-        filenam << "      \\        /" << std::endl;
-        filenam << "_______\\__/\\__/________" << std::endl;
     }
     else
         std::cout << "Error while opening file" << std::endl;
-    filenam.close();
+    filenam.close();      
 }

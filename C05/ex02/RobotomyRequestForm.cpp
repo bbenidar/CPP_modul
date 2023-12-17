@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm..cpp                           :+:      :+:    :+:   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/16 22:56:15 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/12/17 11:08:24 by bbenidar         ###   ########.fr       */
+/*   Created: 2023/12/17 22:28:37 by bbenidar          #+#    #+#             */
+/*   Updated: 2023/12/17 22:34:12 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const& src): AForm(
 
 RobotomyRequestForm::~RobotomyRequestForm(void)
 {
+    std::cout << "RobotomyRequestForm destructor called" << std::endl;
 }
 
 RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm const& src)
@@ -41,8 +42,15 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm const& s
     return (*this);
 }
 
-void RobotomyRequestForm::execute(Bureaucrat const& executor) const
+void RobotomyRequestForm::robotexecute(void) const
 {
+        
+    int random = rand() % 2;
+    std::cout << "Makes some drilling noises" << std::endl;
+    if (random == 0)
+        std::cout << this->_target << " has been robotomized successfully" << std::endl;
+    else
+        std::cout << this->_target << " has not been robotomized successfully" << std::endl;
     
 }
 

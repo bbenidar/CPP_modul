@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/28 12:32:14 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/12/17 12:51:03 by bbenidar         ###   ########.fr       */
+/*   Created: 2023/11/11 16:27:32 by bbenidar          #+#    #+#             */
+/*   Updated: 2023/11/16 17:11:38 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "AForm.hpp"
-#include "ShrubberyCreationForm.hpp"
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
-int main()
-{
-    ShrubberyCreationForm form("home");
-    Bureaucrat bob("Bob", 1);
-    
-    form.execute(bob);
+#include<iostream>
+#include "ClapTrap.hpp"
 
-    std::cout << "---------------------" << std::endl;
-    
-}
+class ScavTrap : public ClapTrap{
+    public:
+        ScavTrap();
+        ScavTrap(std::string name);
+        ScavTrap(const ScavTrap& src);
+        ~ScavTrap();
+        ScavTrap& operator=(const ScavTrap& rhs);
+        void attack(const std::string& target);
+        void guardGate();
+};
+
+#endif

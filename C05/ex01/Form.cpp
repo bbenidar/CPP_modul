@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 19:22:33 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/12/17 11:19:25 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/12/17 16:51:04 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ Form::Form(void) : _name("default"), ConstaGradeToSign(1), ConstaGradeToExec(1)
 {
     std::cout << "Default constructor called" << std::endl;
     this->whether = false;
-    return ;
 }
 
 Form::Form(std::string name, int gradeToSign, int gradeToExec) :
@@ -31,7 +30,6 @@ ConstaGradeToExec(gradeToExec)
         throw Form::GradeTooHighException();
     else if (gradeToSign > 150 || gradeToExec > 150)
         throw Form::GradeTooLowException();
-    return ;
 }
 
 Form::Form(Form const& src) :
@@ -41,13 +39,11 @@ ConstaGradeToExec(src.getConstaGradeToExec())
 {
     std::cout << "Copy constructor called" << std::endl;
     *this = src;
-    return ;
 }
 
 Form::~Form(void)
 {
     std::cout << "Destructor called" << std::endl;
-    return ;
 }
 
 Form& Form::operator=(Form const& src)

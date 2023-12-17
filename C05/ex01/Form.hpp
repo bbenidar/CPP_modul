@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 20:44:08 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/12/16 11:22:59 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/12/17 12:43:39 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ class Form
         Form(Form const& src);
         ~Form(void);
         Form& operator=(Form const& src);
-        friend std::ostream& operator<< (std::ostream& os, const Form& src);
         std::string getName(void) const;
         bool getWhether(void) const;
         int getConstaGradeToSign(void) const;
@@ -49,3 +48,4 @@ class Form
         };
         
 };
+std::ostream& operator<< (std::ostream& os, const Form& src);

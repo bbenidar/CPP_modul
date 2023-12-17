@@ -5,24 +5,24 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/11/28 12:32:17 by bbenidar          #+#    #+#              #
-#    Updated: 2023/12/17 22:28:23 by bbenidar         ###   ########.fr        #
+#    Created: 2023/11/11 15:51:26 by bbenidar          #+#    #+#              #
+#    Updated: 2023/11/13 15:34:01 by bbenidar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Bureaucrat
+NAME = ClapTrap
 CC = c++
-SRC = ./main.cpp ./Bureaucrat.cpp ./AForm.cpp ./ShrubberyCreationForm.cpp ./RobotomyRequestForm.cpp ./PresidentialPardonForm.cpp
+SRC = ./main.cpp ./ClapTrap.cpp
 OBJ = $(SRC:.cpp=.o)
-CFLAGS =   -g -Wall -Wextra -Werror -std=c++98
-HEADER = ./Bureaucrat.hpp ./AForm.hpp
+CFLAGS =  -Wall -Wextra -Werror -std=c++98
 
-all: Bureaucrat 
 
-Bureaucrat : $(OBJ)
-	@$(CC) $(OBJ) -o Bureaucrat && echo  "\033[1;92mCompilation successful\033[0m"
+all: ClapTrap 
 
-%.o: %.cpp $(HEADER)
+ClapTrap : $(OBJ)
+	@$(CC) $(OBJ) -o ClapTrap && echo  "\033[1;92mCompilation successful\033[0m"
+
+%.o: %.cpp ClapTrap.hpp
 	@echo  "\033[1;93mCompiling $<...\033[0m"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
@@ -30,6 +30,6 @@ clean:
 	@rm -f $(OBJ)
 
 fclean: clean
-	@rm -f Bureaucrat
+	@rm -f ClapTrap
 
-re: fclean all 
+re: fclean all

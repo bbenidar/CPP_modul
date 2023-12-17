@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:32:08 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/12/16 22:27:49 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/12/17 16:50:53 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ _name("Bureaucrat"),
 _grade(150)
 {
     std::cout << "Default constructor called" << std::endl;
-    return ;
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) :
@@ -29,13 +28,11 @@ _grade(grade)
         throw Bureaucrat::GradeTooHighException();
     else if (grade > 150)
         throw Bureaucrat::GradeTooLowException();
-    return ;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& src)
 {
     *this = src;
-    return ;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& rhs)
@@ -74,7 +71,6 @@ void Bureaucrat::decrementGrade()
 Bureaucrat::~Bureaucrat()
 {
     std::cout << "Destructor called" << std::endl;
-    return ;
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()

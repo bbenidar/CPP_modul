@@ -6,13 +6,13 @@
 #    By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/28 12:32:17 by bbenidar          #+#    #+#              #
-#    Updated: 2023/12/16 22:24:32 by bbenidar         ###   ########.fr        #
+#    Updated: 2023/12/17 22:26:04 by bbenidar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Bureaucrat
 CC = c++
-SRC = ./main.cpp ./Bureaucrat.cpp ./AForm.cpp ./ShrubberyCreationForm.cpp 
+SRC = ./main.cpp ./Bureaucrat.cpp ./AForm.cpp ./ShrubberyCreationForm.cpp ./RobotomyRequestForm.cpp ./PresidentialPardonForm.cpp ./Intern.cpp 
 OBJ = $(SRC:.cpp=.o)
 CFLAGS =   -g -Wall -Wextra -Werror -std=c++98
 HEADER = ./Bureaucrat.hpp ./AForm.hpp

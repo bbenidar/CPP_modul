@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 16:34:37 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/12/16 22:46:22 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/12/17 12:47:02 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,8 @@ class AForm
         AForm();
         AForm(std::string name, int gradeToSign, int gradeToExec);
         AForm(AForm const& src);
-        ~AForm(void);
+        virtual ~AForm(void);
         AForm& operator=(AForm const& src);
-        friend std::ostream& operator<< (std::ostream& os, const AForm& src);
         std::string getName(void) const;
         bool getWhether(void) const;
         int getConstaGradeToSign(void) const;
@@ -55,3 +54,4 @@ class AForm
         };
         
 };
+std::ostream& operator<< (std::ostream& os, const AForm& src);

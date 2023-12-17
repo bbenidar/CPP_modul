@@ -6,13 +6,20 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 16:46:04 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/12/16 22:46:47 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/12/17 16:51:36 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
+
+
+AForm::AForm(void) : _name("default"), ConstaGradeToSign(1), ConstaGradeToExec(1)
+{
+    std::cout << "Default constructor called" << std::endl;
+    this->whether = false;
+}
 
 AForm::AForm(std::string name, int gradeToSign, int gradeToExec) :
 _name(name),
@@ -25,7 +32,6 @@ ConstaGradeToExec(gradeToExec)
         throw AForm::GradeTooHighException();
     else if (gradeToSign > 150 || gradeToExec > 150)
         throw AForm::GradeTooLowException();
-    return ;
 }
 
 AForm::AForm(AForm const& src) :
@@ -35,13 +41,11 @@ ConstaGradeToExec(src.getConstaGradeToExec())
 {
     std::cout << "Copy constructor called" << std::endl;
     *this = src;
-    return ;
 }
 
 AForm::~AForm(void)
 {
     std::cout << "Destructor called" << std::endl;
-    return ;
 }
 
 AForm& AForm::operator=(AForm const& src)
@@ -102,7 +106,8 @@ std::ostream& operator<< (std::ostream& os, const AForm& src)
 
 void AForm::signForm(Bureaucrat const& src)
 {
-    if (src.getGrade() > this->ConstaGradeToSign)
+    beSigned(src);
+    if (this->whether == false)
         std::cout << src.getName() << " cannot sign " << this->getName() << " because his grade is too low" << std::endl;
     else
         std::cout << src.getName() << " signs " << this->getName() << std::endl;
