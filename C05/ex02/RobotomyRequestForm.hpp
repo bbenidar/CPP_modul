@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/05 22:00:40 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/12/09 22:10:34 by bbenidar         ###   ########.fr       */
+/*   Created: 2023/12/16 22:55:59 by bbenidar          #+#    #+#             */
+/*   Updated: 2023/12/16 22:56:12 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#pragma once
 
-# include <iostream>
+#include "AForm.hpp"
+#include <fstream>
 
-class Fixed
+class RobotomyRequestForm: public AForm
 {
     private:
-        int					value;
-        static const int	fractional_bits = 8;
+        std::string _target;
     public:
-        Fixed(void);
-        Fixed(const Fixed &src);
-        ~Fixed(void);
-        Fixed &operator=(const Fixed &rhs);
-        int		getRawBits(void) const;
-        void	setRawBits(int const raw);
+    RobotomyRequestForm();
+    RobotomyRequestForm(std::string target);
+    RobotomyRequestForm(RobotomyRequestForm const& src);
+    ~RobotomyRequestForm();
+    
+    RobotomyRequestForm& operator=(RobotomyRequestForm const& src);
+    void execute(Bureaucrat const& executor) const;
+
+    
 };
-
-
-#endif
-

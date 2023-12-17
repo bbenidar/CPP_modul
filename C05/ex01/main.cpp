@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/05 22:00:40 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/12/09 22:10:34 by bbenidar         ###   ########.fr       */
+/*   Created: 2023/11/28 12:32:14 by bbenidar          #+#    #+#             */
+/*   Updated: 2023/12/16 15:02:15 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#include "Bureaucrat.hpp"
+#include "Form.hpp"
 
-# include <iostream>
-
-class Fixed
+int main()
 {
-    private:
-        int					value;
-        static const int	fractional_bits = 8;
-    public:
-        Fixed(void);
-        Fixed(const Fixed &src);
-        ~Fixed(void);
-        Fixed &operator=(const Fixed &rhs);
-        int		getRawBits(void) const;
-        void	setRawBits(int const raw);
-};
-
-
-#endif
-
+    try
+    {
+        Bureaucrat b("brahim", 1);
+        Form f("formulaire", 1, 1);
+        std::cout << "2 :"<< b << std::endl;
+        std::cout<< "1 :" << f << std::endl;
+        f.signForm(b);
+       
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    
+}

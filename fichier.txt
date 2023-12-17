@@ -1,15 +1,16 @@
-ex00:
-    lifetime of an object (stack {} or heap (delete) );
-ex01:
-    N must be positif because new throw exeption (!catch program aborts)
-ex03:
-    protect Weapon in HumanB if Weapon is NULL;
-        Weapon *nul = NULL;
-        HumanB test("test");
-        test.setWeapon(*nul);
-        test.attack();
-ex04:
-    what is Byte-stream;
-    infinite loop when same word
-ex05:
-    pointer to member function;
+
+    oxoxoo    ooxoooox
+  ooxoxo oo  oxoxooooox
+ oooo xxoxoo ooo oooxoox
+ oxo o oxoxo  xoxxoxooox
+  oxo xooxoooo o ooooo
+    ooo\oo\  /o/o
+        \  \/ /
+         |   /
+         |  |
+         | D|
+         |  |
+         |  |
+      __/____\__
+      \        /
+_______\__/\__/________
