@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 20:44:08 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/12/17 12:43:39 by bbenidar         ###   ########.fr       */
+/*   Updated: 2024/02/21 16:15:12 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,7 @@ class Form
         bool getWhether(void) const;
         int getConstaGradeToSign(void) const;
         int getConstaGradeToExec(void) const;
-        void beSigned(Bureaucrat const& src);
-        void signForm(Bureaucrat const& src);
+        void beSigned(Bureaucrat &src) ;
         class GradeTooHighException : public std::exception
         {
             public:

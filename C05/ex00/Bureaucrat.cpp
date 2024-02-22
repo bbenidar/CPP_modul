@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:32:08 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/12/16 11:43:44 by bbenidar         ###   ########.fr       */
+/*   Updated: 2024/02/04 16:14:07 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& rhs)
 
 std::ostream& operator<< (std::ostream& os, const Bureaucrat& src)
 {
-    os << src.getName() << ", bureaucrat grade " << src.getGrade() << std::endl;
+    os << src.getName() << " grade : " << src.getGrade() << std::endl;
     return (os);
 }
 

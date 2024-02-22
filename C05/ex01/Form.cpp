@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 19:22:33 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/12/17 16:51:04 by bbenidar         ###   ########.fr       */
+/*   Updated: 2024/02/21 18:44:38 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,6 @@ Form& Form::operator=(Form const& src)
     return (*this);
 }
 
-std::ostream& operator<< (std::ostream& os, const Bureaucrat& src)
-{
-    os << src.getName() << ", bureaucrat grade " << src.getGrade() << std::endl;
-    return (os);
-}
 
 std::string Form::getName(void) const
 {
@@ -79,12 +74,14 @@ int Form::getConstaGradeToExec(void) const
     return (this->ConstaGradeToExec);
 }
 
-void Form::beSigned(Bureaucrat const& src)
+void Form::beSigned(Bureaucrat &src)
 {
     if (src.getGrade() > this->ConstaGradeToSign)
         throw Form::GradeTooLowException();
     else
-        this->whether = true;
+    {
+        this->whether = true; 
+    }
 }
 
 const char* Form::GradeTooHighException::what() const throw()
@@ -107,11 +104,5 @@ std::ostream& operator<< (std::ostream& os, const Form& src)
     return (os);
 }
 
-void Form::signForm(Bureaucrat const& src)
-{
-    if (src.getGrade() > this->ConstaGradeToSign)
-        std::cout << src.getName() << " cannot sign " << this->getName() << " because his grade is too low" << std::endl;
-    else
-        std::cout << src.getName() << " signs " << this->getName() << std::endl;
-}
+
 

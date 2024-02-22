@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 21:56:02 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/12/17 14:57:04 by bbenidar         ###   ########.fr       */
+/*   Updated: 2024/02/04 19:01:15 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const& src) :
 
 ShrubberyCreationForm::~ShrubberyCreationForm(void)
 {
-    std::cout << "ShrubberyCreationForm destructor called" << std::endl;
+    std::cout << this->_target << " ShrubberyCreationForm destructor called" << std::endl;
 }
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm const& src)

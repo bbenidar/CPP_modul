@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Intern.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/17 12:12:15 by bbenidar          #+#    #+#             */
-/*   Updated: 2024/02/22 15:50:24 by bbenidar         ###   ########.fr       */
+/*   Created: 2023/12/17 23:14:22 by bbenidar          #+#    #+#             */
+/*   Updated: 2023/12/17 23:14:31 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "ScalarConverte.hpp"
 
-#include <iostream>
-#include "AForm.hpp"
-
-class Intern
+int main(int ac, char **av)
 {
-    public:
-    Intern();
-    Intern(const Intern& src);
-    Intern& operator=(const Intern& src);
-    ~Intern();
-
-    AForm *makeForm(std::string name, std::string target);
-    
-    
-};
-
-
+    if (ac != 2)
+    {
+        std::cout << "Wrong number of arguments" << std::endl;
+        return (0);
+    }
+    ScalarConverte test(av[1]);
+    return (0);
+}

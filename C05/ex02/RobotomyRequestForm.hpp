@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 22:55:59 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/12/17 22:33:12 by bbenidar         ###   ########.fr       */
+/*   Updated: 2024/02/04 19:09:46 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class RobotomyRequestForm: public AForm
     
     RobotomyRequestForm& operator=(RobotomyRequestForm const& src);
     void robotexecute(void) const;
+    void execute(Bureaucrat const& executor) const;
 
     
 };

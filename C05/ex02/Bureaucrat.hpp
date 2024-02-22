@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:32:11 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/12/17 12:42:41 by bbenidar         ###   ########.fr       */
+/*   Updated: 2024/02/21 18:46:23 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ class Bureaucrat
         void incrementGrade();
         void decrementGrade();
         void executeForm(AForm const& form) const;
+        void signForm(AForm& form);
         class GradeTooHighException : public std::exception
         {
             public:

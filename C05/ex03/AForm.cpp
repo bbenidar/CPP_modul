@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 16:46:04 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/12/17 16:51:57 by bbenidar         ###   ########.fr       */
+/*   Updated: 2024/02/21 20:00:54 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,15 +99,8 @@ const char* AForm::FormNotSignedException::what() const throw()
 
 std::ostream& operator<< (std::ostream& os, const AForm& src)
 {
-    os << src.getName() << ", bureaucrat grade " << src.getConstaGradeToSign() << std::endl;
+    os << src.getName() << ", AForm grade " << src.getConstaGradeToSign() << std::endl;
     return (os);
 }
 
-void AForm::signForm(Bureaucrat const& src)
-{
-    if (src.getGrade() > this->ConstaGradeToSign)
-        std::cout << src.getName() << " cannot sign " << this->getName() << " because his grade is too low" << std::endl;
-    else
-        std::cout << src.getName() << " signs " << this->getName() << std::endl;
-}
 

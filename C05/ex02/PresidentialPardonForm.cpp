@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 22:54:32 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/12/17 16:49:51 by bbenidar         ###   ########.fr       */
+/*   Updated: 2024/02/22 15:25:36 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,12 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 
 void PresidentialPardonForm::execute(Bureaucrat const& executor) const
 {
-    if (executor.getGrade() > getConstaGradeToExec())
+    
+    if (this->getWhether() == false)
+        throw AForm::FormNotSignedException();
+    if (executor.getGrade() > this->getConstaGradeToExec())
         throw AForm::GradeTooLowException();
     std::cout << this->_target << " has been pardoned by Zafod Beeblebrox." << std::endl;
-}
-
-std::ostream& operator<<(std::ostream& os, PresidentialPardonForm const& src)
-{
-    os << src.getName() << ", bureaucrat grade required to sign it: " << src.getConstaGradeToSign() << ", bureaucrat grade required to execute it: " << src.getConstaGradeToExec() << std::endl;
-    return (os);
 }
 
 std::string PresidentialPardonForm::getTarget() const

@@ -6,12 +6,13 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 22:28:37 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/12/17 22:34:12 by bbenidar         ###   ########.fr       */
+/*   Updated: 2024/02/22 15:24:54 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "RobotomyRequestForm.hpp"
+#include "Bureaucrat.hpp" 
 
 RobotomyRequestForm::RobotomyRequestForm(): AForm("RobotomyRequestForm", 72, 45)
 {
@@ -42,16 +43,20 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm const& s
     return (*this);
 }
 
-void RobotomyRequestForm::robotexecute(void) const
+void RobotomyRequestForm::execute(Bureaucrat const& executor) const
 {
-        
+    if (this->getWhether() == false)
+        throw AForm::FormNotSignedException();
+    if (executor.getGrade() > this->getConstaGradeToExec())
+        throw AForm::GradeTooLowException();
+    srand(time(NULL));
     int random = rand() % 2;
+    std::cout << "rand " << random << std::endl;
     std::cout << "Makes some drilling noises" << std::endl;
     if (random == 0)
         std::cout << this->_target << " has been robotomized successfully" << std::endl;
     else
         std::cout << this->_target << " has not been robotomized successfully" << std::endl;
-    
 }
 
 
