@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverte.hpp                                 :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/17 23:09:38 by bbenidar          #+#    #+#             */
-/*   Updated: 2024/03/04 15:49:41 by bbenidar         ###   ########.fr       */
+/*   Created: 2024/03/04 17:54:57 by bbenidar          #+#    #+#             */
+/*   Updated: 2024/03/04 17:59:27 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,30 @@
 #include <iostream>
 #include <string>
 
-class ScalarConverte
+class Base
 {
-    private:
-        std::string _input;
-        char _char;
-        int _int;
-        float _float;
-        double _double;
     public:
-        ScalarConverte();
-        ScalarConverte(std::string input);
-        ScalarConverte(ScalarConverte const& src);
-        ScalarConverte& operator=(ScalarConverte const& src);
-        static void convert(std::string input);
-        ~ScalarConverte();
+        virtual ~Base() {}
 };
+
+class A : public Base
+{
+    public:
+        virtual ~A() {}
+};
+
+class B : public Base
+{
+    public:
+        virtual ~B() {}
+};
+
+class C : public Base
+{
+    public:
+        virtual ~C() {}
+};
+
+Base * generate(void);
+void identify(Base * p);
+void identify(Base & p);
