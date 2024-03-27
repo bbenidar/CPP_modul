@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 02:14:58 by bbenidar          #+#    #+#             */
-/*   Updated: 2024/03/25 00:56:46 by bbenidar         ###   ########.fr       */
+/*   Updated: 2024/03/27 01:13:51 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,6 @@ T &Array<T>::operator[](unsigned int n)
 {
     try
     {
-        
         if (n >= this->n)
             throw std::out_of_range("Out of range");
         return arr[n];

@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/19 22:39:49 by bbenidar          #+#    #+#             */
-/*   Updated: 2024/03/26 23:23:17 by bbenidar         ###   ########.fr       */
+/*   Created: 2024/03/25 01:43:56 by bbenidar          #+#    #+#             */
+/*   Updated: 2024/03/26 20:56:52 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+#include <vector>
+#include <set>
 
-template <typename T>
+class Span{
+    private:
+        unsigned int n;
+        unsigned int stored;
+        std::vector<int> arr;
 
-void f(T &a)
-{
-    std::cout << a << std::endl;
-}
-
-template <typename T>
-void iter(T *array, int len, void (*f)(T &))
-{
-    for (int i = 0; i < len; i++)
-        f(array[i]);
-}
+    public:
+        Span(unsigned int nn);
+        Span();
+        ~Span();
+        Span( const Span &other);
+        Span &operator=(const Span  &other);
+        void addNumber(int n);
+        int shortestSpan();
+        int longestSpan();
+        
+};
