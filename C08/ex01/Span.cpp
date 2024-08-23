@@ -62,28 +62,29 @@ void Span::addNumber(int n)
     {
         std::cerr << e << '\n';
     }
-    
-    
+}
+
+void Span::addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+{
+    while (begin != end)
+    {
+        this->addNumber(*begin);
+        begin++;
+    }
 }
 
 int Span::shortestSpan()
 {
         if (this->arr.size() <= 1)
             throw "array too small\n";
-        std::set<int> st;
-        for (size_t i = 0; i < arr.size() ; i++)
-        {
-            if (st.count(arr[i]))
-                return (0);
-            st.insert(arr[i]);
-        }
+        std::sort(arr.begin(), arr.end());
         int mn = INT_MAX;
         
-        for (std::set<int>::iterator it = st.begin(); it  != st.end() ; ++it)
+        for (std::vector<int>::iterator it = arr.begin(); it  != arr.end() ; ++it)
         {
-            std::set<int>::iterator it2 = it;
+            std::vector<int>::iterator it2 = it;
             it2++;
-            if (it2 == st.end())
+            if (it2 == arr.end())
                 break;
             mn = std::min(mn, abs(*it2 - *it));
         }

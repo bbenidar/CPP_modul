@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 01:15:33 by bbenidar          #+#    #+#             */
-/*   Updated: 2024/03/25 01:30:48 by bbenidar         ###   ########.fr       */
+/*   Created: 2024/08/06 16:13:05 by bbenidar          #+#    #+#             */
+/*   Updated: 2024/08/16 18:01:43 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
 
+// PmergeMe
 #include <iostream>
-#include <algorithm>
+#include "PmergeMe.hpp"
 
-template <typename T>
-int easyfind(T& Cont, int val)
+int main(int ac, char **av)
 {
-    typename T::iterator it = std::find(Cont.begin(), Cont.end(), val);
-    if (it == Cont.end())
-        return -1;
-    return std::distance(Cont.begin(), it);
+    if (ac < 2)
+    {
+        std::cout << "Usage: ./PmergMe <number>" << std::endl;
+        return 1;
+    }
+    PmergeMe p(av);
+
+    p.beforePrintVec();
+    p.mergeSortVec();
+    p.afterPrintVec();
+    p.printTimeofVec(ac);
+
+    p.mergeSortDeque();
+    p.printTimeofDeque(ac);
+   
+    return 0;
 }

@@ -15,6 +15,7 @@
 #include <iostream>
 #include <vector>
 #include <set>
+#include <algorithm>
 
 class Span{
     private:
@@ -22,14 +23,14 @@ class Span{
         unsigned int stored;
         std::vector<int> arr;
 
-    public:
+     public:
         Span(unsigned int nn);
         Span();
         ~Span();
         Span( const Span &other);
         Span &operator=(const Span  &other);
         void addNumber(int n);
+        void addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end);
         int shortestSpan();
         int longestSpan();
-        
 };

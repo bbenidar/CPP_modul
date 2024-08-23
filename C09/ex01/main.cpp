@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 01:15:33 by bbenidar          #+#    #+#             */
-/*   Updated: 2024/03/25 01:30:48 by bbenidar         ###   ########.fr       */
+/*   Created: 2024/05/25 18:22:59 by bbenidar          #+#    #+#             */
+/*   Updated: 2024/08/17 12:31:05 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-
+// RPN Calculator
 #include <iostream>
-#include <algorithm>
+#include "RPN.hpp"
 
-template <typename T>
-int easyfind(T& Cont, int val)
+
+
+int main(int ac ,char **av)
 {
-    typename T::iterator it = std::find(Cont.begin(), Cont.end(), val);
-    if (it == Cont.end())
-        return -1;
-    return std::distance(Cont.begin(), it);
+
+    if (ac != 2)
+    {
+        std::cout << "Error: no arguments" << std::endl;
+        return 1;
+    }
+    RPN rpn(av[1]);
+    
+    
+    return 0;
 }

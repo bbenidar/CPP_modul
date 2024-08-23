@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 01:15:33 by bbenidar          #+#    #+#             */
-/*   Updated: 2024/03/25 01:30:48 by bbenidar         ###   ########.fr       */
+/*   Created: 2024/08/17 12:26:16 by bbenidar          #+#    #+#             */
+/*   Updated: 2024/08/21 15:33:03 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
-#include <algorithm>
+#include <stack>
+#include <sstream>
 
-template <typename T>
-int easyfind(T& Cont, int val)
+class RPN
 {
-    typename T::iterator it = std::find(Cont.begin(), Cont.end(), val);
-    if (it == Cont.end())
-        return -1;
-    return std::distance(Cont.begin(), it);
-}
+    public:
+        std::stack<long> _stack;
+        RPN();
+        RPN(std::string str);
+        RPN(const RPN &other);
+        RPN &operator=(const RPN &other);
+        ~RPN();
+};

@@ -67,6 +67,8 @@
         "filesystem": "cpp",
         "__tree": "cpp",
         "set": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "map": "cpp",
+        "queue": "cpp"
     }
 }

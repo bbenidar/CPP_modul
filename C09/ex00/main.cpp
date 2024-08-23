@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 01:15:33 by bbenidar          #+#    #+#             */
-/*   Updated: 2024/03/25 01:30:48 by bbenidar         ###   ########.fr       */
+/*   Created: 2024/05/25 18:22:59 by bbenidar          #+#    #+#             */
+/*   Updated: 2024/08/18 16:53:48 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "BitcoinExchange.hpp"
 
-#include <iostream>
-#include <algorithm>
-
-template <typename T>
-int easyfind(T& Cont, int val)
+int main(int ac, char **av)
 {
-    typename T::iterator it = std::find(Cont.begin(), Cont.end(), val);
-    if (it == Cont.end())
-        return -1;
-    return std::distance(Cont.begin(), it);
+    if (ac != 2)
+    {
+        std::cerr << "Usage: ./bitcoin [filename]" << std::endl;
+        return 1;
+    }
+    std::string filename = av[1];
+    BitcoinExchange exchange(filename);
+    
+    return 0;
 }
